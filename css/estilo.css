@@ -10,7 +10,7 @@
 #
 */
 
-
+/*############ Estilo das formações ############*/
 .divWelcome{
 	background-color: #2a2a2b;
 	text-align: center;
@@ -21,9 +21,6 @@
 	box-shadow: 5px 10px 10px;
 }
 
-.divChat{
-
-}
 
 .logos{
 	width: 15%;
@@ -67,4 +64,60 @@
 .TextosAparte{
 	font-family: Arial;
 	color: white;
+}
+
+/*############ Estilo do chat ############*/
+
+.chat{
+	border-radius: 5px;
+	padding: 20px;
+	border-radius: 10px 10px 0px 0px;
+	box-shadow: 5px 10px 10px;
+	margin-top: 100px;
+	height: 410px;
+	overflow-y: auto;
+	background-color: #2a2a2b;
+}
+
+.formulariomsg{
+	text-align: right;
+	padding: 10px;
+	border-radius: 0px 0px 10px 10px;
+	background-color: #2a2a2b;
+	box-shadow: 5px 10px 10px;
+}
+
+.mensagem{
+	border: 1px solid black;
+	border-radius: 5px;
+	resize: none;
+	width: 600px;
+	height: 50px;
+	overflow: auto;
+}
+
+.botaoEnviar{
+	background-color: #899dd9;
+	border-radius: 5px;
+	border: 1px solid black;
+	box-shadow: 2px 2px 3px;
+	font-family: Helvetica;
+	text-align: center;
+}
+
+.nome{
+	padding: 7px;
+	background-color: #322c36;
+	border-radius: 8px;
+	margin-bottom: -6px;
+	border: 1px solid black;
+	color: white;
+}
+
+.textomensagem{
+	padding: 7px;
+	background-color: white;
+	border-radius: 10px;
+	color: black;
+	border: 1px solid black;
 }
