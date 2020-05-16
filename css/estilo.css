@@ -1,0 +1,70 @@
+/*
+#
+#
+# Projeto Chat PHP 
+# By: Pedro Pessoa
+# Data de início: 16/05/2020
+# github: github.com/yzPeedro/
+#
+#
+#
+*/
+
+
+.divWelcome{
+	background-color: #2a2a2b;
+	text-align: center;
+	padding: 10px;
+	margin-left: 30px;
+	margin-top: 100px;
+	width: 430px;
+	box-shadow: 5px 10px 10px;
+}
+
+.divChat{
+
+}
+
+.logos{
+	width: 15%;
+	width: 20%;
+	border: 1px solid black;
+	border-radius: 360px;
+	margin-right: 560px;
+	margin-top: 50px;
+	animation-name: mudarcorvoltando;
+  	animation-duration: 2s;
+}
+
+.logos:hover{
+	width: 15%;
+	width: 20%;
+	border: 1px solid white;
+	border-radius: 360px;
+	margin-right: 560px;
+	margin-top: 50px;
+	animation-name: mudarcorindo;
+  	animation-duration: 2s;
+}
+
+/* Animação logo indo*/
+@keyframes mudarcorindo {
+  from {border-color: black;}
+  to {border-color: white;}
+}
+
+/* Animação logo voltando */
+@keyframes mudarcorvoltando {
+  from {border-color: white;}
+  to {border-color: black;}
+}
+
+
+#TituloPrincipal{
+	color: #899dd9;
+}
+
+.TextosAparte{
+	font-family: Arial;
+	color: white;
+}
