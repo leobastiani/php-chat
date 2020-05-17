@@ -1,13 +1,29 @@
-<!DOCTYPE html>
+<?php
+	require_once('./php/chat-conexao.php');
+	$sql = $pdo->query("SELECT * FROM tbchat");
+
+	
+	
+
+	if(empty($_POST['nome']) || empty($_POST['mensagem'])){
+
+	}else{
+		$nome = $_POST['nome'];
+		$mensagem = $_POST['mensagem'];
+		$sql = $pdo->query("INSERT INTO tbchat (nome, mensagem) VALUES ('$nome', '$mensagem')");
+		header('Location: index.php');
+	}
+?>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Chat - PHP</title>
-	<script type="text/javascript" src="js/script.js"></script>
+	
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
+	
 </head>
 	<body>
 
@@ -21,7 +37,7 @@
 						<h1 class="TextosAparte"> <span id="TituloPrincipal">PHP</span> CHAT</h1>
 						<hr style="border-color: #1c1c1c ; opacity: 25%;">
 						<p class="TextosAparte">
-						Seja bem vindo ao projeto CHAT - PHP, este projeto consiste na criação de um site utiliando
+						Seja bem vindo ao projeto PHP CHAT, este projeto consiste na criação de um site utiliando
 						o php como linguaguem do back-end, no qual será responsável por armazenar as mensagens enviadas
 						para os demais usuários. Este é um sistema simples, visando ajudar aqueles que precisam de um 
 						sistema de chat utilizando a linguagem em PHP. Este é um sistema simplificado e que pode ser
@@ -36,19 +52,34 @@
 			
 
 			<div class="col-md-7">
-					<div class="chat">
+					<div class="chat" id="chat">
+						<?php
+							
+						
+							foreach ($sql->fetchAll() as $key) {
 
-						<label class="nome">
-							Pedro Pessoa
-						</label>
-							<p class="textomensagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, sapien ac vulputate accumsan, arcu enim dignissim odio, vel hendrerit augue metus a sapien. Donec et augue massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec felis leo, hendrerit nec auctor sit amet, imperdiet non magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras porttitor quam ante, ac fringilla orci interdum eget. Donec aliquam nibh ligula, id ullamcorper nisl dignissim et. In lobortis magna sit amet gravida laoreet. Nunc tincidunt orci sed justo finibus malesuada. In ac mi non risus semper congue. Morbi ullamcorper congue massa eget imperdiet. Aenean maximus elit non commodo posuere. In gravida augue tortor, sit amet imperdiet dolor porttitor sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, sapien ac vulpu
+								if(empty($key['nome'])){
 
-							i interdum eget. Donec aliquam nibh ligula, id ullamcorper nisl dignissim et. In lobortis magna sit amet gravida laoreet. Nunc tincidunt orci sed justo finibus malesuada. In ac mi non risus semper congue. Morbi ullamcorper congue massa eget imperdiet. Aenean maximus elit non commodo posuere. In gravida augue tortor, sit amet imperdiet dolor porttitor sit amet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam volutpat, sapie
-							</p>
+									echo "<div style='text-align: center;'>
+												<label class='nome'>Aviso</label>
+												<p class='textomensagem'>Ops! Parece que ainda não temos nenhuma mensagem no banco de dados! que tal tentar enviar uma? selecione um nome e digite uma mensagem!</p>
+										</div>";
+
+								}else{
+									echo "<label class='nome'>".$key['nome']."</label>";
+									echo "<p class='textomensagem'>".$key['mensagem']."</p>";
+								}
+									
+									
+							}
+								
+						?>
+							
 					</div>
-				<form class="formulariomsg">
+				<form class="formulariomsg" >
 						<textarea name="mensagem" class="mensagem" placeholder="Digite sua mensagem aqui."></textarea><br>
-						<input type="submit" class="botaoEnviar" Value="Enviar">
+						<input type="text" name="nome" class="digitarnome" placeholder="Digite Seu nome.">
+						<input type="submit" class="botaoEnviar" Value="Enviar" id="btnEnviar">
 				</form>
 			</div>
 		</div>
@@ -63,4 +94,6 @@
 	<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	<!-- /jQuery -->
+
+	<script type="text/javascript" src="../js/script.js"></script>
 </html>
