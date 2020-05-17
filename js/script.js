@@ -13,6 +13,11 @@ function ajax(){
 		}
 	req.open('GET', '../src/php/chat.php', true);
 	req.send();
+
 }
-		
+
+window.onload = (event) => {
+ 	ajax();
+};
+
 setInterval(function(){ajax();}, 1000);

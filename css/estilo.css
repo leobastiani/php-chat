@@ -66,6 +66,10 @@
 	color: white;
 }
 
+body{
+	background-image: url('../img/background.jpg');
+}
+
 /*############ Estilo do chat ############*/
 
 .chat{
@@ -127,3 +131,5 @@
 	border-radius: 10px;
 	padding: 4px;
 }
+
+
