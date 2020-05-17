@@ -1,9 +1,21 @@
 
+/*
+#########
+	função responsável por abaixar a barra de rolagem do chat
+#########
+*/
 function abaixarbarra(){
 	var div = document.getElementById('chat');
 	div.scrollTo(0, 1000);
 }
 
+/*
+#########
+	função ajax responsável por 
+	renderizar em tempo real as
+	ultimas mensagens enviadas no chat
+#########
+*/
 function ajax(){
 				var req = new XMLHttpRequest();
 				req.onreadystatechange = function(){
@@ -16,8 +28,19 @@ function ajax(){
 
 }
 
+
+/*
+#########
+	Utilidade responsável por
+	executar a função Ajax toda vez
+	que a página for carregada
+#########
+*/
 window.onload = (event) => {
  	ajax();
 };
 
+
+
+//função que determina o tempo em que o chat será atualizado(1000 = 1 segundo)
 setInterval(function(){ajax();}, 1000);
