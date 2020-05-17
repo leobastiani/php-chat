@@ -33,7 +33,7 @@ CREATE TABLE `tbchat`(
 - [3] Implantar um sistema de notificação, para que sempre que uma mensagem nova chegar ao banco de dados, ser enviado uma solicitação         especificando que existem mensagens novas para apresentar.<br><br>
 - [4] Implantar aos usuários a opção de envio de imagens para o servidor, assim possibilitando a troca de imagens entre os usários.<br><br>
 - [5] Fazer o submit das mensagens sem o refresh da página, assim deixando o projeto mais dinâmico e profissional.<br><br>
-- [6] Criar relatórios de erros para que o sistema sempre que o sistema retornar um erro, o cliente tenha como entrar em contato e possivelmente solucionar<br><br>
+- [6] Criar relatórios de erros para sempre que o sistema retornar um erro, o cliente tenha como entrar em contato e possivelmente solucionar o problema<br><br>
 
 <h1>Informações do desenvolvedor</h1>
 	<p>Sou um desenvolvedor Full-Stack Junior, atualmente na data de escrita deste documento (17/05/2020), estou focando meus estudos em Laravel no back-end. Muito obrigado pela sua atenção, espero que este projeto te ajude a desenvolver suas aplicações e boa sorte!</p>
