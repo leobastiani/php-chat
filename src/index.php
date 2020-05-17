@@ -1,20 +1,18 @@
 <?php
 	require_once('./php/chat-conexao.php');
-	$sql = $pdo->query("SELECT * FROM tbchat");	
+	$sql = $pdo->query("SELECT * FROM tbchat");
 
+	
+	
 
 	if(empty($_POST['nome']) || empty($_POST['mensagem']) ||
 		$_POST['nome'] == '' || $_POST['mensagem'] == ''){
-
 	}else{
 		$nome = $_POST['nome'];
 		$mensagem = $_POST['mensagem'];
 		$sql = $pdo->query("INSERT INTO tbchat (nome, mensagem) VALUES ('$nome', '$mensagem')");
 		header('Location: index.php');
 	}
-
-	
-
 ?>
 <html>
 <head>
@@ -27,7 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
 	
 </head>
-	<body>
+	<body onload="ajax();">
 
 		<div class="container">
 
@@ -55,21 +53,9 @@
 
 			<div class="col-md-7">
 					<div class="chat" id="chat">
-						<?php
-							
-						foreach ($sql->fetchAll() as $key) {
-
-							echo "<label class='nome'>".$key['nome']."</label>";
-							echo "<p class='textomensagem'>".$key['mensagem']."</p>";
-								
-									
-							}
-							
-								
-						?>
 							
 					</div>
-				<form class="formulariomsg" action="index.php" method="POST"> 
+				<form class="formulariomsg" action="index.php" method="POST">
 						<textarea name="mensagem" class="mensagem" placeholder="Digite sua mensagem aqui."></textarea><br>
 						<input type="text" name="nome" class="digitarnome" placeholder="Digite Seu nome.">
 						<input type="submit" class="botaoEnviar" Value="Enviar" id="btnEnviar">
