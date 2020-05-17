@@ -1,11 +1,10 @@
 <?php
 	require_once('./php/chat-conexao.php');
-	$sql = $pdo->query("SELECT * FROM tbchat");
+	$sql = $pdo->query("SELECT * FROM tbchat");	
 
-	
-	
 
-	if(empty($_POST['nome']) || empty($_POST['mensagem'])){
+	if(empty($_POST['nome']) || empty($_POST['mensagem']) ||
+		$_POST['nome'] == '' || $_POST['mensagem'] == ''){
 
 	}else{
 		$nome = $_POST['nome'];
@@ -13,6 +12,9 @@
 		$sql = $pdo->query("INSERT INTO tbchat (nome, mensagem) VALUES ('$nome', '$mensagem')");
 		header('Location: index.php');
 	}
+
+	
+
 ?>
 <html>
 <head>
@@ -55,28 +57,19 @@
 					<div class="chat" id="chat">
 						<?php
 							
-						
-							foreach ($sql->fetchAll() as $key) {
+						foreach ($sql->fetchAll() as $key) {
 
-								if(empty($key['nome'])){
-
-									echo "<div style='text-align: center;'>
-												<label class='nome'>Aviso</label>
-												<p class='textomensagem'>Ops! Parece que ainda não temos nenhuma mensagem no banco de dados! que tal tentar enviar uma? selecione um nome e digite uma mensagem!</p>
-										</div>";
-
-								}else{
-									echo "<label class='nome'>".$key['nome']."</label>";
-									echo "<p class='textomensagem'>".$key['mensagem']."</p>";
-								}
-									
+							echo "<label class='nome'>".$key['nome']."</label>";
+							echo "<p class='textomensagem'>".$key['mensagem']."</p>";
+								
 									
 							}
+							
 								
 						?>
 							
 					</div>
-				<form class="formulariomsg" >
+				<form class="formulariomsg" action="index.php" method="POST"> 
 						<textarea name="mensagem" class="mensagem" placeholder="Digite sua mensagem aqui."></textarea><br>
 						<input type="text" name="nome" class="digitarnome" placeholder="Digite Seu nome.">
 						<input type="submit" class="botaoEnviar" Value="Enviar" id="btnEnviar">
