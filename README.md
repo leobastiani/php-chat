@@ -40,4 +40,3 @@ CREATE TABLE `tbchat`(
 <h2>Redes Sociais</h2>
 
 - [Instagram](https://Instagram.com/peedro.pc/)
-- [Twitter](https://twitter.com/_Peedrokas)
