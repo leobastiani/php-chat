@@ -19,7 +19,7 @@ CREATE TABLE `tbchat`(
     `id` INT NOT NULL AUTO_INCREMENT , 
     `nome` VARCHAR(40) NOT NULL , 
     `mensagem` TEXT NOT NULL , 
-    PRIMARY KEY (`id`));
+    PRIMARY KEY (`id`)
 );
 ```
 <br><span>Obs.: O código deve ser executado dentro do banco de dados criado anteriormente<span>
