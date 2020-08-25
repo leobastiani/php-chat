@@ -40,6 +40,19 @@ window.onload = (event) => {
  	ajax();
 };
 
+$(function(){
+
+	$('#btnEnviar').click(function(){
+		
+		var data = {
+			nome: $('#nome').val(),
+			mensagem: $('#msg').val()
+		}
+
+		$.post('http://localhost/CHAT-PHP/src/php/sendmessage.php', data);	
+	});
+
+});
 
 
 //função que determina o tempo em que o chat será atualizado(1000 = 1 segundo)
