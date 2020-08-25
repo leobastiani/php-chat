@@ -44,14 +44,21 @@ $(function(){
 
 	$('#btnEnviar').click(function(){
 		
-		var data = {
+		if($('#msg').val() === '' || $('#nome').val() === ''){
+
+			
+		}else{
+			var data = {
 			nome: $('#nome').val(),
 			mensagem: $('#msg').val()
+
+			}
+
+			$.post('http://localhost/CHAT-PHP/src/php/sendmessage.php', data);	
+
+			$('#msg').val('');
 		}
-
-		$.post('http://localhost/CHAT-PHP/src/php/sendmessage.php', data);	
-
-		$('#msg').val('');
+		
 	});
 
 });

@@ -181,8 +181,14 @@ body{
 	box-shadow: 2px 2px 3px;
 	font-family: Helvetica;
 	text-align: center;
+	outline: none;
+	transition: 0.5s;
 }
 
+.botaoEnviar:hover{
+	transition: 0.5s;
+	background-color: #96bd6f;
+}
 
 /*
 ############

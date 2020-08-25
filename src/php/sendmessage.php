@@ -4,7 +4,7 @@
 	$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
 	$mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_STRING);
 
-	if($nome == ''){
+	if(!isset($nome) || !isset($mensagem) || ctype_alpha($nome) || ctype_alpha($mensagem)){
 		return false;
 	}else{
 		
