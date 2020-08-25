@@ -50,6 +50,8 @@ $(function(){
 		}
 
 		$.post('http://localhost/CHAT-PHP/src/php/sendmessage.php', data);	
+
+		$('#msg').val('');
 	});
 
 });
