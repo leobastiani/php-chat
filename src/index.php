@@ -1,34 +1,3 @@
-<?php
-
-	/*
-	#####################################
-	Executa a função php responsável
-	por inserir uma nova mensagem na
-	tabela do banco de dados
-	#####################################
-	*/
-	require_once('./php/chat-conexao.php'); //chama o arquvio chat-conexao.php
-
-	$sql = $pdo->query("SELECT * FROM tbchat"); //executa uma seleção na tabela paraverificar
-												//se existe novas mensagem no sistema
-
-
-	//verifica se os campos nomes e mensagem estão preenchidos
-	if(empty($_POST['nome']) || empty($_POST['mensagem']) ||
-		$_POST['nome'] == '' || $_POST['mensagem'] == ''){
-
-		//pode-se retornar um erro aqui
-	}else{
-		$nome = $_POST['nome']; //coloca o nome digitada na variavel nome
-		$mensagem = $_POST['mensagem']; //coloca a mensagem na varivavel mensagem
-
-		//insere a mensagem na tabela tbchat
-		$sql = $pdo->query("INSERT INTO tbchat (nome, mensagem) VALUES ('$nome', '$mensagem')"); 
-		
-		//retorna o usuário para a página princiapl (atualizando o submit)
-		header('Location: index.php');
-	}
-?>
 <html>
 
 <!-- Head -->
