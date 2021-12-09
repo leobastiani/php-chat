@@ -7,7 +7,7 @@ $mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_STRING);
 if($nome == '' || $mensagem == ''){
 	return false;
 }else{
-	
+
 	$sql = $pdo->prepare('INSERT INTO tbchat (nome, mensagem) VALUES (:nameParam, :msgParam)');
 
 	$nome = htmlspecialchars($nome);

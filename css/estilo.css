@@ -1,7 +1,7 @@
 /*
 #
 #
-# Projeto Chat PHP 
+# Projeto Chat PHP
 # By: Pedro Pessoa
 # Data de início: 16/05/2020
 # github: github.com/yzPeedro/
@@ -12,129 +12,83 @@
 
 /*############ Estilo das informações ############*/
 
-
-/* ############ 
-	Css das informações apresentadas na esquerda da tela  
+/* ############
+	Css das informações apresentadas na esquerda da tela
 ############ */
-.divWelcome{
-	background-color: #2a2a2b;
-	text-align: center;
-	padding: 10px;
-	margin-left: 30px;
-	margin-top: 100px;
-	width: 430px;
-	box-shadow: 5px 10px 10px;
+.divWelcome {
+  background-color: #2a2a2b;
+  text-align: center;
+  padding: 10px;
+  margin-left: 30px;
+  margin-top: 100px;
+  width: 430px;
+  box-shadow: 5px 10px 10px;
 }
 
-
-
 /*
-############ 
+############
 	Css responsável pelo logo do github apresentado em tela
 ############
 */
-.logos{
-	width: 15%;
-	width: 20%;
-	border: 1px solid black;
-	border-radius: 360px;
-	margin-right: 560px;
-	margin-top: 50px;
-	animation-name: mudarcorvoltando;
-  	animation-duration: 2s;
+.logos {
+  width: 15%;
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 360px;
+  animation-name: mudarcorvoltando;
+  animation-duration: 2s;
 }
 
-
-
-/*
-############
-	Css que altera o estado do logo quando o mouse passa por
-	cima da imagem
-############
-*/
-.logos:hover{
-	width: 15%;
-	width: 20%;
-	border: 1px solid white;
-	border-radius: 360px;
-	margin-right: 560px;
-	margin-top: 50px;
-	animation-name: mudarcorindo;
-  	animation-duration: 2s;
+.logos:hover {
+  width: 15%;
+  width: 20%;
+  border: 1px solid white;
+  border-radius: 360px;
+  animation-name: mudarcorindo;
+  animation-duration: 2s;
 }
 
-
-
-/* Animação logo indo*/
 @keyframes mudarcorindo {
-  from {border-color: black;}
-  to {border-color: white;}
+  from {
+    border-color: black;
+  }
+  to {
+    border-color: white;
+  }
 }
 
-
-
-/* Animação logo voltando */
 @keyframes mudarcorvoltando {
-  from {border-color: white;}
-  to {border-color: black;}
+  from {
+    border-color: white;
+  }
+  to {
+    border-color: black;
+  }
 }
 
-
-
-/*############ 
-	Css responsável pelo título da página
-	(h1 principal)
-############*/
-#TituloPrincipal{
-	color: #899dd9;
+#TituloPrincipal {
+  color: #899dd9;
 }
 
-
-
-/*
-############
-	Css responsável pelo texto
-	da área de infornações
-############
-*/
-.TextosAparte{
-	font-family: Arial;
-	color: white;
+.TextosAparte {
+  font-family: Arial;
+  color: white;
 }
 
-
-
-/*
-############
-	Css responsável pelo body
-	da página
-############
-*/
-body{
-	background-image: url('../img/background.jpg');
+body {
+  background-image: url("../img/background.jpg");
 }
 
-
-
-/*############ Estilo do chat ############*/
-
-/*
-############
-	Divisão responsável por renderizar
-	o chat
-############
-*/
-.chat{
-	border-radius: 5px;
-	padding: 20px;
-	border-radius: 10px 10px 0px 0px;
-	box-shadow: 5px 10px 10px;
-	margin-top: 100px;
-	height: 410px;
-	overflow-y: auto;
-	background-color: #2a2a2b;
+.chat {
+  border-radius: 5px;
+  padding: 20px;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow: 5px 10px 10px;
+  margin-top: 100px;
+  height: 410px;
+  overflow-y: auto;
+  background-color: #2a2a2b;
 }
-
 
 /*
 ############
@@ -142,14 +96,13 @@ body{
 	enviar a imagem
 ############
 */
-.formulariomsg{
-	text-align: right;
-	padding: 10px;
-	border-radius: 0px 0px 10px 10px;
-	background-color: #2a2a2b;
-	box-shadow: 5px 10px 10px;
+.formulariomsg {
+  text-align: right;
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #2a2a2b;
+  box-shadow: 5px 10px 10px;
 }
-
 
 /*
 ############
@@ -157,16 +110,14 @@ body{
 	por ser a área de digitação das mensagens
 ############
 */
-.mensagem{
-	border: 1px solid black;
-	border-radius: 5px;
-	resize: none;
-	width: 100%;
-	height: 50px;
-	overflow: auto;
+.mensagem {
+  border: 1px solid black;
+  border-radius: 5px;
+  resize: none;
+  width: 100%;
+  height: 50px;
+  overflow: auto;
 }
-
-
 
 /*
 ############
@@ -174,20 +125,20 @@ body{
 	os dados do formulário para serem tratados
 ############
 */
-.botaoEnviar{
-	background-color: #899dd9;
-	border-radius: 5px;
-	border: 1px solid black;
-	box-shadow: 2px 2px 3px;
-	font-family: Helvetica;
-	text-align: center;
-	outline: none;
-	transition: 0.5s;
+.botaoEnviar {
+  background-color: #899dd9;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px;
+  font-family: Helvetica;
+  text-align: center;
+  outline: none;
+  transition: 0.5s;
 }
 
-.botaoEnviar:hover{
-	transition: 0.5s;
-	background-color: #96bd6f;
+.botaoEnviar:hover {
+  transition: 0.5s;
+  background-color: #96bd6f;
 }
 
 /*
@@ -197,16 +148,14 @@ body{
 	a mensagem
 ############
 */
-.nome{
-	padding: 7px;
-	background-color: #322c36;
-	border-radius: 8px;
-	margin-bottom: -6px;
-	border: 1px solid black;
-	color: white;
+.nome {
+  padding: 7px;
+  background-color: #322c36;
+  border-radius: 8px;
+  margin-bottom: -6px;
+  border: 1px solid black;
+  color: white;
 }
-
-
 
 /*
 ############
@@ -215,14 +164,13 @@ body{
 	pelo usuário
 ############
 */
-.textomensagem{
-	padding: 7px;
-	background-color: white;
-	border-radius: 10px;
-	color: black;
-	border: 1px solid black;
+.textomensagem {
+  padding: 7px;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  border: 1px solid black;
 }
-
 
 /*
 ############
@@ -231,10 +179,8 @@ body{
 	o nome da pessoa que enviar a mensagem
 ############
 */
-.digitarnome{
-	border: 1px solid black;
-	border-radius: 10px;
-	padding: 4px;
+.digitarnome {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 4px;
 }
-
-
